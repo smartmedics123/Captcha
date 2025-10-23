@@ -1,0 +1,19 @@
+.gradient-background {
+    /* height: 200vh; */
+    /* width: 100%; */
+    background: linear-gradient(to bottom, #ffffff, #4B9096);
+    /* overflow: hidden; */
+    
+  }
+  .Cancelbtn{
+    background-color: #008F9D;
+    border: none;
+
+}
+.Cancelbtn:hover{
+    background-color: #008F9D;
+
+}
+.abc{
+  background-color: #008F9D;
+}

@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =================================== */
+/* === General & Desktop Styles === */
+/* =================================== */
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.order-management-heading {
+  margin-bottom: 1rem;
+}
+
+.order-management-content {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.order-management-tabs .nav-link {
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 10px 20px;
+    font-weight: 600;
+    color: #555;
+    transition: all 0.3s ease-in-out;
+}
+.order-management-tabs .nav-link:hover,
+.order-management-tabs .nav-link.active {
+    color: #09C6B2;
+    border-bottom-color: #09C6B2;
+}
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #09C6B2 !important;
+  color: #fff !important;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    margin-top: 16px;
+    /* width: 100%; */
+}
+
+.filter-item {
+    flex: 1;
+    min-width: 130px;
+    max-width: 200px;
+}
+
+.btnDateSort {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .custom-view-button,
+.custom-cancel-button,
+.custom-reorder-button {
+
+    min-width: 60px !important; 
+
+}
+
+    .filter-item {
+        flex: 1 1 calc(50% - 6px);
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-item {
+        flex: 1 1 100%;
+    }
+}
+
+/* Desktop Table Styles */
+.custom-table-container {
+    overflow: hidden;
+}
+.table-responsive {
+    overflow-x: hidden;
+}
+.order-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+.order-table th, .order-table td {
+    padding: 16px;
+    font-size: 14px;
+    vertical-align: middle;
+    border-bottom: 1px solid #E5E7EB;
+    white-space: nowrap;
+}
+.order-table th {
+    background-color: #F9FAFB;
+    color: #475467;
+    font-weight: 600;
+    text-align: center;
+}
+.order-table .address-cell {
+    white-space: normal;
+    word-break: break-word;
+    min-width: 250px;
+}
+.order-table tbody tr:last-child td {
+    border-bottom: none;
+}
+.custom-view-button,
+.custom-cancel-button,
+.custom-reorder-button {
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 20px;
+    min-width: 120px; /* 👈 same width dono ke liye */
+    text-align: center; /* text ko center karega */
+}
+
+.custom-view-button {
+    background-color: #00969E;
+    color: white;
+    border: none;
+}
+
+.custom-cancel-button {
+    background-color: white; /* Red color for cancel */
+    color: #DC3545;
+    border: 1.5px solid #dc3545;
+}
+
+.custom-cancel-button:hover {
+    background-color: #c82333 !important; /* Darker red on hover */
+    color: white;
+}
+
+.custom-reorder-button {
+    background-color: #ffffff;
+    border: 1px solid #00969E; /* border optional, chahe to hata do */
+    color: #00969E;
+}
+.previousbtn {
+  text-decoration: none !important; /* underline hata dega */
+  color: #00969E; /* apni desired color */
+  font-weight: 500;
+}
+.previousbtn:hover {
+  text-decoration: none !important; /* hover par bhi underline na aaye */
+  color: #007a80; /* hover color optional */
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.status-pending, .status-in-progress { background-color: #F5EDFF; color: #6B3FC9; }
+.status-approved { background-color: #EBFBF5; color: #3FC99D; }
+.status-shipped { background-color: #FFF4E5; color: #FFA500; }
+.status-delivered { background-color: #EBF5FB; color: #2C7ACE; }
+.status-cancelled { background-color: #FBEBEB; color: #DC3545; }
+
+
+
+
+/* Pagination */
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+}
+.previousbtn, .Nextbtn {
+    border: 1px solid #ddd;
+    box-shadow: none;
+    font-size: 14px;
+    color: #333;
+    border-radius: 8px;
+    background-color: #fff;
+    height: 38px;
+    padding: 0 16px;
+    text-decoration: none;
+}
+.pagination-container .link {
+    color: #555;
+    border-radius: 8px;
+}
+.pagination-container .link.bg-light {
+    background-color: #F3F4F6 !important;
+}
+.summary-list li::before {
+  content: "•";             /* bullet dot */
+  color: #495057;           /* bullet ka color */
+  font-size: 1.2rem;        /* thoda bada bullet */
+  margin-right: 10px;       /* space between bullet & text */
+}
+
+/* =================================== */
+/* === Responsive (Mobile View) === */
+/* =================================== */
+@media (max-width: 768px) {
+    /* Hide specified columns */
+    .mobile-hide {
+        display: none;
+    }
+
+    .order-management-content {
+        padding: 16px;
+    }
+
+    /* Stack header and filters */
+    .order-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+    .filter-container {
+        display: grid;
+        grid-template-columns: 0fr 0fr;
+        /* width: 100%; */
+    }
+
+    /* Make table scrollable if it still overflows */
+    .order-table {
+        min-width: 100%; /* Remove minimum width */
+        white-space: nowrap;
+    }
+
+    .order-table th, .order-table td {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+    .order-table th:last-child, .order-table td:last-child {
+        padding-right: 16px;
+    }
+
+    /* Adjust pagination */
+    .pagination-container {
+        font-size: 14px;
+    }
+    .previousbtn, .Nextbtn {
+        padding: 0 12px;
+    }
+}

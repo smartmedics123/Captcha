@@ -1,0 +1,46 @@
+.address-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  box-shadow: 0 0 12px 4px #A8A8A873;
+  /* margin-left: 100px; */
+  width: 100%;
+}
+.address-card p {
+  margin-bottom: 4px; /* Reduce vertical space */
+  line-height: 1.4;   /* Tighten line spacing */
+}
+
+.edit-btn {
+  background:#00969E;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+ width: 150px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  opacity: 0.9;
+}
+
+.delete-btn {
+  background: transparent;
+  color: red;
+  border: 1px solid red;
+  width: 150px;
+  /* padding: 6px; */
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+}
+
+.delete-btn:hover {
+  background-color: #ffe5e5;
+}

@@ -1,0 +1,567 @@
+/* Import a font similar to the one in Figma */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+
+
+/* Header Section */
+.order-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.order-detail-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.breadcrumb-link {
+    color: #676767;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+    color: #00A9A5;
+}
+
+.breadcrumb-separator {
+    color: #000000;
+    font-size: 20px;
+    margin: 0.5rem;
+}
+
+/* Header Action Buttons */
+.order-actions .btn {
+    border-radius: 50px; 
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+    border-width: 1.5px;
+    margin-left: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.action-button-cancel {
+    background-color: #FFF;
+    border-color: #E74C3C;
+    color: #E74C3C;
+}
+
+.action-button-cancel:hover {
+    background-color: #E74C3C;
+    color: #FFF;
+    transform: translateY(-2px);
+}
+
+.action-button-reorder {
+    background-color: #00A9A5;
+    border-color: #00A9A5;
+}
+
+.action-button-reorder:hover {
+    background-color: #008781;
+    border-color: #008781;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 169, 165, 0.3);
+}
+
+/* Order Summary Section */
+.order-summary-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.order-summary-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem !important;
+}
+
+.summary-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.summary-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 0;
+}
+
+.summary-list li:last-child {
+    border-bottom: none;
+}
+
+.summary-list .label {
+    flex: 0 0 180px;
+    color: #555;
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+.summary-list .value {
+    flex: 1;
+    color: #222;
+    font-weight: 400;
+    text-align: left;
+    word-break: break-word;
+}
+
+/* Main Detail Card Styling */
+.detail-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #c4c4c438;
+}
+
+.card-title {
+    /* font-size: 1.25rem; */
+    /* font-weight: 600; */
+    color: #1a1a1a;
+      /* background-color: #FFFFFF; */
+    /* padding: 1rem; */
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.14); */
+    border-radius: 22px;
+}
+
+
+.text-primary {
+    /* font-size: 20px; */
+    color: #00A9A5;
+    
+}
+
+/* --- New, Accurate Progress Tracker --- */
+.progress-tracker-wrapper {
+    position: relative;
+    height: 100px; /* Provides space for labels */
+}
+
+/* The grey background line */
+.progress-bar-background,
+.progress-bar-foreground {
+    position: absolute;
+    top: 14px; /* Aligns with the center of the circles */
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    border-radius: 2px;
+}
+
+.progress-bar-background {
+    background-color: #00A9A5;
+    width: 80%; /* Spans between first and last step centers */
+    z-index: 1;
+
+}
+
+/* The teal progress line */
+.progress-bar-foreground {
+    background-color: #00A9A5;
+    width: 80% !important; /* Width is set by inline style */
+    z-index: 2;
+ height: 2px !important;
+    transition: width 0.5s ease-in-out;
+}
+
+.steps-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%; /* Each step takes up space */
+    text-align: center;
+}
+.custom-close-button
+{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 33px;
+    width: 130px;
+    color: #000000;
+    margin-top: 80px;
+    margin-left: 230px;
+}
+
+.last
+{
+  background-color: transparent;
+    border: 1px solid black;
+    border-radius: 33px;
+    width: 130px;
+    color: #000000;
+    /* margin-left: 990px;  */
+}
+.prescription-image-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  height: 100%; /* ensures it stretches in height with summary box */
+  min-height: 300px;
+}
+
+
+.prescription-image1 {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+
+
+.items
+{
+ margin-bottom: 10px;
+  margin-left:30px;
+}
+
+.step-indicator {
+    width: 24px;
+    height: 24px;
+    color: white;
+    display: flex;
+    margin-top: 4px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #E3E3E3;
+    border-radius: 50%;
+    background-color: #E3E3E3;
+}
+
+.step-label {
+    margin-top: 0.75rem;
+}
+
+.step-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #676767;
+    margin-bottom: 0.25rem;
+}
+
+.step-descriptions {
+    font-size: 0.7rem !important;
+    color: #A0A0A0;
+    margin-bottom: 0;
+}
+
+/* Step States */
+.progress-step.active .step-indicator {
+    background-color: #ffffff;
+    border-color: #00A9A5;
+    transform: scale(1.1);
+}
+
+.progress-step.active .step-name {
+    color: #000000;
+    font-weight: 600;
+}
+
+.progress-step.completed .step-indicator {
+    background-color: #00A9A5;
+    border-color: #00A9A5;
+}
+
+/* Items Table */
+.items-table {
+    margin-top: 1.5rem;
+}
+.items-table thead tr {
+    background-color: #F9F9F9;
+}
+.items-table th {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #676767;
+    padding: 0.75rem 1rem;
+    border-bottom: none;
+}
+.items-table td {
+  padding: 1rem 1rem;
+  vertical-align: middle;
+  font-size: 1rem;
+  color: #333;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+
+
+.items-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Financial Summary (inside items card) */
+
+.financial-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+.financial-row span:first-child {
+    color: #676767;
+}
+.financial-row.grand-total {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    margin-top: 0.75rem;
+}
+
+/* Prescription Image Card */
+.prescription-image {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.prescription-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.download-btn {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #00A9A5;
+    border-color: #00A9A5;
+    font-weight: 600;
+}
+.download-btn1 {
+    border-radius: 8px;
+    background-color: #00A9A5;
+    border-color: #00A9A5;
+    font-weight: 300;
+    margin-left: 183px;
+
+
+}
+
+
+
+
+.items-table td {
+  padding: 6px 0;
+  font-size: 19px;
+}
+
+.items-table .fw-semibold {
+  font-weight: 600;
+}
+
+.items-table .text-muted {
+  font-size: 13px;
+}
+@media (max-width: 1158px) {
+    .summary-list .label
+    {
+            flex: 0 0 200px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .order-detail-title {
+        font-size: 1.25rem;
+    }
+    
+  
+    
+    .label {
+        /* min-width: 120px; */
+        display: inline-block;
+    }
+}
+
+@media (max-width: 1222px) {
+    .step-name 
+    {
+        font-size: 0.75rem;
+    }
+    .step-descriptions {
+    font-size: 0.6rem !important;
+    color: #A0A0A0;
+    margin-bottom: 0;
+}
+}
+
+@media (max-width: 552px) {
+    /* Vertical Progress Tracker */
+.progress-tracker-wrapper {
+    height: auto;
+    padding: 0;
+}
+.track {
+    font-size: 0.9rem;
+}
+.progress-bar-background,
+.progress-bar-foreground {
+    display: none;
+}
+
+/* Step 1: Container ko line ke liye reference banayein */
+.steps-container {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative; /* Yeh zaroori hai */
+}
+
+/* Step 2: Pseudo-element se vertical line banayein */
+.steps-container::before {
+    content: '';
+    position: absolute;
+    top: 18px;      /* Pehle indicator ke center se shuru */
+    bottom: 15px;   /* Aakhri indicator ke center tak */
+    left: 23px;     /* Indicator ke center mein (agar indicator 30px ka hai) */
+    width: 2px;
+    background-color: #e0e0e0; /* Line ka color */
+    z-index: 1;     /* Line ko peeche rakhein */
+}
+    
+.progress-step {
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    align-items: flex-start;
+}
+    
+/* Step 3: Indicator ko line ke upar show karein */
+.step-indicator {
+    margin-right: 1rem;
+    margin-bottom: 0;
+    position: relative; /* z-index ke liye zaroori */
+    z-index: 2;         /* Indicator ko line ke upar rakhein */
+    background-color: white; /* Page ke background color se match karein */
+}
+    
+.step-label {
+    margin-top: 0;
+}
+  
+  
+    /* Full width buttons */
+    .close-btn, .download-btn {
+        width: 100%;
+     
+
+    }
+    /* .custom-close-button
+    {
+        
+  
+           display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        width:15rem;
+        height:2rem;
+      padding-bottom: 2.2rem;
+        
+
+    } */
+
+ 
+}
+
+.items-table tbody tr td {
+  border-bottom: 1px solid #E8E8E8; /* Light grey horizontal line */
+  padding-bottom: 1rem; /* Space below the text */
+  padding-top: 1rem; /* Space above the text */
+}
+
+/* Optional: Removes the line from the very last row */
+.items-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 400px) {
+
+       .close-btn
+    {
+           display: flex;
+        justify-content: center;
+        /* margin-left: 100px; */
+        width: 500px;
+    }
+    .items-table td {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 981px) {
+    .prescription-image1
+    {
+        margin-top: 30px !important;
+    }
+}
+@media (max-width: 842px) 
+{
+.value
+{
+  font-size: 13px;
+}
+.prescription-image-wrapper {
+  /* Is div ko sirf margin-top ke liye rakhein */
+  margin-top: 1.5rem;
+}
+
+.prescription-image1 {
+  display: block; /* Image ko block element banayein */
+  max-width: 100%; 
+  height: auto;   
+  
+  /* YEH LINES IMAGE KO CENTER KARENGI */
+  margin-left: auto;
+  margin-right: auto;
+}
+}
+
+@media (max-width:1399) {
+.prescription-image1 {
+  max-width: 100%; 
+
+}
+.prescription-image-wrapper {
+    object-fit: contain;
+}
+}
+
+
+@media (min-width: 1318px) {
+  .step-name {
+    font-size: 15px; 
+  }
+
+}
+@media (max-width: 477px) {
+    .summary-list .label
+    {
+            flex: 0 0 150px !important;
+    }
+}
+@media (max-width: 768px) {
+  .last {
+    width: 500px;
+  }
+}

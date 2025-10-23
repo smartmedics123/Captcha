@@ -1,0 +1,138 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.mainhead{
+    color:  #00A9B0;
+}
+Form.Control{
+    background-color: #00A9B0;
+}
+.custom-input-bg {
+    background-color: #ffffff; /* Light blue background */
+    height: 60px;
+    border-radius: 5px; /* Rounded corners */ 
+    font-size: 16px; /* Adjust font size */
+    color: #333; /* Text color */
+    
+  }
+  
+  .custom-input-bg:focus {
+    outline: none; /* Remove default focus outline */
+    background-color: #ffffff; /* Light blue background */
+
+    /* box-shadow: 0 0 5px rgba(0, 128, 128, 0.5); Add teal glow on focus */
+  }
+  .savebtn{
+    background-color: #00A9B0;
+    border-radius: 25px; /* Rounded corners */
+     border-color:  #00A9B0;
+     width: 20%;
+  }
+  .savebtn:hover{
+    border-color:  #00A9B0;
+
+    background-color: #00A9B0;
+
+  }
+  .cnclbtn{
+    background-color: white;
+    color:#00A9B0 ;
+    border-radius: 25px; /* Rounded corners */
+    border-color:  #00A9B0;
+    width: 20%;
+  }
+  .cnclbtn:hover{
+    border-color:  #00A9B0;
+    background-color: white;
+    color:#00A9B0 ;
+
+  }
+  @media (max-width: 768px) {
+     .savebtn{
+        width: 55%;
+        margin-top: 5px;
+        font-size: 20px !important;
+    
+        
+     }
+   
+   
+  }
+  .custom-input-bg:disabled {
+    background-color: #ffffff; /* Bootstrap default for disabled */
+    color: #6c757d; /* Bootstrap gray color */
+    border: 1px solid #ced4da;
+  }
+   .custom-input-bg:hover
+   {
+        background-color: #e4e4e4;
+        cursor: pointer;
+   }
+  .profile-card {
+  display: flex;
+  /* gap: 30px; */
+  background: #fff;
+  /* padding: 20px; */
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.profile-image-section {
+  flex: 0 0 330px;
+  text-align: center;
+  margin-left: 20px;
+  margin-top: 30px;
+  border: 0.5px solid #D1D1D1;
+  height: 330px;
+  width: 500px;
+  border-radius: 20px;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 0px;
+  top: 128px;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.profile-form {
+  flex: 1;
+}
+
+.profile-form .form-control {
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.save-btn {
+  background-color: #00b3a4;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 20px;
+}
+
+.save-btn:hover {
+  background-color: #009e90;
+}

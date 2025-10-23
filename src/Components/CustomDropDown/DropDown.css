@@ -1,0 +1,96 @@
+.mainname::after {
+    color: #008F9D; /* Change this to the color you want */
+    
+   
+  }
+  .mainname:hover{
+    color: #008F9D !important; /* Change this to the color you want */
+
+  }
+.dropdown-item:hover{
+    background-color: #008F9D;
+    color: white;
+} 
+.subitem::after{
+   
+    content: '›'; /* Add the arrow symbol (you can change this to a Unicode or icon) */
+    margin-left: auto; /* Push the arrow to the end of the item */
+    
+    font-size: 0.9em; /* Adjust arrow size if needed */
+}
+.subitem {
+  display: flex;
+  justify-content: space-between; /* Ensures the text and arrow are on opposite ends */
+  align-items: center; /* Vertically aligns the text and arrow */
+
+  position: relative; /* Required if adding a pseudo-element for the arrow */
+  padding: 10px;
+  
+}
+
+.subitem:hover{
+  color: white;
+  background-color: #008F9D;
+}
+
+
+.main:hover .drop{
+  display: flex;
+}
+
+
+.drop{
+  display: none;
+}
+
+.dropdown-menu-hover {
+  display: none !important;
+}
+
+.dropdown-menu-hover.show {
+  display: block !important;
+}
+
+.subitem {
+  cursor: pointer;
+  position: relative;
+}
+
+.subitem:hover {
+  background-color: #008f9d;
+  color: white;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-menu-hover .dropdown-menu {
+  position: absolute;
+  top: 0;
+  left: 100%; /* Align submenu to the right of parent */
+  z-index: 1050;
+  min-width: 200px;
+}
+
+
+   
+/* Base triangle style */
+/* Base triangle style (facing down initially) */
+.triangle-icon {
+  display: inline-block;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #00a2e8;
+    vertical-align: middle; /* Aligns icon with text */
+  transition: transform 0.3s ease;
+}
+
+/* Rotate triangle when expanded (facing up for "View Less") */
+.dropdown-item.expanded .triangle-icon {
+  transform: rotate(180deg);
+}
+

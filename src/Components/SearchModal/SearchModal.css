@@ -1,0 +1,91 @@
+/* SearchModal.css */
+
+.search-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1050;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Aligns modal to the top */
+  padding-top: 5%;
+}
+
+.search-modal-container {
+  width: 100%;
+  max-width: 600px; /* Max width for desktop */
+  height: fit-content;
+  max-height: 80vh; /* Max height for desktop */
+  display: flex;
+  flex-direction: column;
+  animation: slide-down 0.3s ease-out;
+  border-radius: 1rem; /* Rounded corners for desktop */
+  overflow: hidden;
+}
+
+.search-modal-body {
+  overflow-y: auto;
+}
+
+.search-result-item:hover {
+  background-color: #f8f9fa;
+}
+
+.brand-logo-container {
+  width: 100%;
+  height: 70px;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --- Responsive Styles for Mobile --- */
+@media (max-width: 767px) {
+  .search-modal-overlay {
+    padding-top: 0; /* Remove padding for full screen */
+    align-items: stretch;
+  }
+
+  .search-modal-container {
+    max-width: 100%;
+    max-height: 100vh;
+    height: 100%;
+    border-radius: 0; /* No rounded corners on mobile */
+    animation: none; /* No animation for mobile */
+  }
+
+  /* Adjust font sizes for smaller screens */
+  .product-title {
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .product-price {
+    font-size: 0.85rem;
+  }
+  
+  .search-modal-container .form-control::placeholder {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Styling for the main container */
+.address-book-container .row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+/* Card styles */
+.address-book-container .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 12px rgba(131, 128, 128, 0.08) !important;
+  border: none !important;
+  background: #fff;
+}
+
+.address-book-container .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+.address-book-container .card.border-primary {
+  border: 1px solid #16b1b1 !important;
+}
+
+/* Padding adjustments for grid layout */
+@media (min-width: 768px) {
+  .address-book-container .col-lg-4,
+  .address-book-container .col-lg-6 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .address-book-container .col-xl-3,
+  .address-book-container .col-xl-4 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Custom breakpoint for better layout on medium-large screens */
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .address-book-container .col-xl-4 {
+    flex: 0 0 33.33333333%;
+    width: 33.33333333%;
+  }
+}
+
+/* Table and Card Container Styles */
+.detail-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(131, 128, 128, 0.08);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background: #fff;
+  font-weight: 500;
+  border-bottom: 1px solid #dee2e6;
+  padding: 15px;
+  vertical-align: middle;
+}
+
+.table tbody td {
+  padding: 15px;
+  vertical-align: middle;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.table .btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+/* Address Truncation */
+.truncate-address {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .address-book-container .card {
+    min-width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  .detail-card {
+    border-radius: 15px;
+    margin: 0 0 1rem 0;
+  }
+
+  .table-responsive {
+    padding: 0;
+    margin: 0 -0.5rem;
+  }
+
+  .table thead th,
+  .table tbody td {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .table .btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    width: auto;
+  }
+
+  .truncate-address {
+    max-width: 150px;
+  }
+
+  .custom-re-order-btn {
+    margin-top: 8px !important;
+    margin-left: 0 !important;
+  }
+
+  .small {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .table thead th,
+  .table tbody td {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .truncate-address {
+    max-width: 120px;
+  }
+
+  .table .btn {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+  }
+}
+.custom-card {
+  flex: 1 1 275px;   /* har card ki min-width 275px, aur wrap hoga */
+}
+
+/* Fix for the sidebar space issue */
+.main-content {
+  margin-left: 0 !important;
+  width: 100% !important;
+  padding: 20px;
+}
+
+/* Fix for the card layout */
+.recipient-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.recipient-card-col {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+
+/* Card styling */
+.custom-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .recipient-card-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .recipient-card-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .recipient-card-col {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .recipient-card-col {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+@media (min-width: 1201px) {
+  .recipient-card-col {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+/* Specific fix for the 913px breakpoint */
+@media (max-width: 913px) {
+
+  
+  .recipient-card-col {
+    flex: 0 0 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+}
+
+/* Table responsiveness */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.detail-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Button styling */
+.btn {
+  font-weight: 500;
+}
+
+/* Ensure proper spacing */
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+.g-4 {
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+}
+
+.g-4 > .col, .g-4 > [class*="col-"] {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}

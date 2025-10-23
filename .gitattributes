@@ -1,0 +1,2 @@
+src/assets/lottie/*.json filter=lfs diff=lfs merge=lfs -text
+src/assets/Images/*.svg filter=lfs diff=lfs merge=lfs -text

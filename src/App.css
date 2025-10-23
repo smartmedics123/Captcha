@@ -1,0 +1,422 @@
+/* App.css */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/poppins-latin-400-normal.woff2') format('woff2'),
+       url('/fonts/poppins-latin-400-normal.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+body {
+  font-family: "Poppins";
+}
+
+.bg-aboutUs {
+  background-image: url("../src/assets/AboutUs.jpg");
+  background-size: cover; /* Make sure the image covers the container */
+  background-position: center; /* Center the image */
+  min-height: 50em; /* Ensure the container takes up the full height of the viewport */
+  padding: 20px; /* Optional: Add some padding */
+}
+
+/* App.css */
+.equal-height {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.equal-height .icon {
+  margin-bottom: 1rem;
+}
+
+.equal-height h5 {
+  margin-bottom: 1rem;
+}
+
+.equal-height p {
+  flex-grow: 1;
+}
+
+.card-container {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.card-container > div {
+  flex-grow: 1;
+}
+/* App.css */
+.border-custom {
+  border: 2px solid #00909d; /* Adjust the color and width as needed */
+}
+
+.bag-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+  background-color: rgb(168, 0, 0);
+  border-radius: 50%;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+/* ------------------------Checkbox for ProductDetails Pages------------------------- */
+/* Hide the default checkbox */
+.card-text input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.card-text input[type="checkbox"] + .custom-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #00909d; /* Default background color for pre-filled checkbox */
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+  position: relative;
+}
+
+/* When the checkbox is checked, add a filled circle */
+.card-text input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: #2196f3; /* Same color as the default background */
+}
+
+/* Create the white dot inside the filled circle */
+.card-text input[type="checkbox"]:checked + .custom-checkbox::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* --------------------------------------------------------------------------------------------- */
+
+/* CarouselStyles.css */
+
+/* Custom styles for the left and right carousel controls */
+/* CarouselStyles.css */
+
+/* Custom styles for the left and right carousel controls */
+
+.carousel-item img {
+  transition: transform 0.5s ease; /* Smooth transition for the zoom effect */
+  cursor: zoom-in; /* Change cursor to zoom-in icon */
+}
+
+.carousel-item:hover img {
+  transform: scale(1.1); /* Zoom in on hover */
+  cursor: zoom-in; /* Ensure cursor remains zoom-in on hover */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  color: #008f9d; /* Sets the arrow color to orange */
+}
+
+/* Custom styles for the hover effect */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  color: #008f9d; /* Changes the arrow color on hover to a lighter orange */
+  background-color: transparent; /* Ensures the background is transparent */
+}
+
+/* Adjust the arrow size and opacity */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none; /* Remove default background images */
+  font-size: 30px; /* Adjust font size as needed */
+  opacity: 1; /* Full opacity */
+  margin-inline: 20px; /* Adjust margin to center the arrows */
+}
+
+/* Customizing carousel indicators */
+.carousel-indicators li {
+  background-color: #008f9d; /* Change to your desired color for inactive indicators */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; /* Makes the indicators circular */
+}
+
+.carousel-indicators .active {
+  background-color: #008f9d; /* Change to your desired color for the active indicator */
+}
+
+/* Optional: Font Awesome icons for arrow customization */
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+  content: ""; /* Clear default content */
+  font-family: "FontAwesome"; /* Font family if FontAwesome is used */
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit; /* Font Awesome adjustment */
+}
+
+.carousel-control-prev-icon::before {
+  content: "\f053"; /* FontAwesome left arrow */
+}
+
+.carousel-control-next-icon::before {
+  content: "\f054"; /* FontAwesome right arrow */
+}
+
+/* --------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- */
+/* Privacy policy */
+.bg-privacy {
+  /* background-image: url("../src/assets/AboutUs.jfif"); */
+  background-size: cover; /* Make sure the image covers the container */
+  background-position: center; /* Center the image */
+  min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
+  padding: 20px; /* Optional: Add some padding */
+  background-color: gray;
+}
+
+/* ---------------------------HomePage------------------------- */
+.bg-HomePage {
+  background-image: url("../src/assets/AboutUs.png");
+  background-size: cover; /* Make sure the image covers the container */
+  background-position: center; /* Center the image */
+  min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
+  padding: 20px; /* Optional: Add some padding */
+}
+
+/* ---------------------------Terms and Conditions------------------------- */
+
+.bg-terms {
+  background-image: url("../src/assets/Images/T&C.png");
+  background-size: cover; /* Ensure the image covers the container */
+  background-position: center; /* Center the image */
+  min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
+  padding: 20px;
+  background-color: gray;
+}
+
+/* Add media queries for further customization if needed */
+
+/* next and privous button */
+.custom-button {
+  background-color: #008f9d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.custom-button:hover {
+  background-color: #007a85;
+}
+
+@media (max-width: 576px) {
+  .progress-custom .progress-bar {
+    background-color: white !important; /* Make the progress bar background transparent */
+  }
+}
+/* ----------------searchbar */
+.suggestion {
+  z-index: 100; /* Ensure it's above other content */
+  background-color: white; /* Add a background color */
+  border: 1px solid #ccc; /* Add a border */
+}
+/* Custom CSS */
+.list-group-item.active {
+  background-color: #008f9d; /* Change this to your desired background color */
+  color: white; /* Optional: Change the text color when active */
+}
+/* App.css */
+.responsive-height {
+  height: 80vh; /* Default height for larger screens */
+}
+/* .custom-heading-text{
+  font-size: 40px 
+} */
+
+.playbtn {
+  background-color: red;
+  color: white;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .responsive-height {
+    height: 25vh; /* Larger height on tablets */
+  }
+  .playbtn {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media (min-width: 768px) {
+  .custom-heading-text {
+    font-size: 26px !important;
+  }
+  .logo {
+    width: 15% !important;
+  }
+  .custom-text {
+    font-size: 30px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-height {
+    height: 90vh; /* Full screen height on small devices */
+  }
+  .playbtn {
+    width: 40px;
+    height: 40px; /* Adjust size for small screens */
+  }
+}
+.status-card {
+  transition: all 0.3s ease;
+}
+.status-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+.custom-video-modal .modal-dialog {
+  max-width: 960px; /* Controls the card width */
+  margin: auto;
+}
+
+.custom-video-modal .modal-content {
+  background-color: white !important;
+  border-radius: 10px;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.custom-video-modal .modal-body {
+  padding: 0;
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+.modal-backdrop.show {
+  background-color: white !important;
+  opacity: 1 !important;
+}
+.address-cell {
+  max-width: 250px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.contact-us-illustration {
+  background: #F2FBFB;
+}
+/* Make it more flexible for mobile screens */
+@media (max-width: 768px) {
+  .address-cell {
+    max-width: 150px; /* slightly smaller on mobile */
+    font-size: 14px; /* smaller text */
+  }
+}
+
+@media (max-width: 480px) {
+  .address-cell {
+    max-width: 120px; /* even smaller on very small screens */
+    font-size: 12px; /* smaller font */
+  }
+}
+.status-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.status-card-wrapper {
+  min-width: 260px;
+  max-width: 260px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+@media (max-width: 768px) {
+  .status-scroll-container {
+    justify-content: flex-start; /* default for scroll */
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .status-card-wrapper {
+    min-width: 250px;
+    scroll-snap-align: start;
+  }
+
+  .status-scroll-container::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .status-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+}
+
+.status-card {
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  height: 100%;
+}
+.status-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.status-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+.carousel-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+  max-width: 100vw !important;
+}
+
+/* --------------------------- NAVBAR------------------------- */

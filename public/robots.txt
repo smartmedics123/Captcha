@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://smartmedics.pk/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /dashboard/private/
+
+# Allow important pages
+Allow: /medicines
+Allow: /self-medication
+Allow: /nutrition-supplements
+Allow: /medical-supplies
+Allow: /product/
+Allow: /about-us
+Allow: /contact-us

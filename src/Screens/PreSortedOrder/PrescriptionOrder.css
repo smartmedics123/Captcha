@@ -1,0 +1,35 @@
+.historybtn{
+    background-color: #008F9D;
+    border: none;
+
+}
+.historybtn:hover{
+    background-color: #008F9D;
+
+}
+/* Main container styles */
+.main-container {
+    transition: filter 0.3s ease;
+    position: relative; /* Ensure overlay and container are aligned */
+    z-index: 0;
+  }
+  
+  .main-container.blurred {
+    filter: blur(5px); /* Apply blur */
+    pointer-events: none; /* Disable interactions */
+  }
+  
+  /* Full-screen overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1; /* Ensure it appears above everything */
+    cursor: not-allowed; /* Indicate that the area is not clickable */
+  }
+  .inputs {
+    border: 1px solid #ced4da; /* Default Bootstrap 5 border */
+  }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        button { margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        .info { background-color: #e7f3ff; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background-color: #d4edda; padding: 10px; margin: 10px 0; border-radius: 5px; color: #155724; }
+        .error { background-color: #f8d7da; padding: 10px; margin: 10px 0; border-radius: 5px; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>Notification System Test</h1>
+    
+    <div class="info">
+        <h3>Backend Status</h3>
+        <p>Backend URL: http://localhost:8000</p>
+        <p>Frontend URL: http://localhost:3000</p>
+    </div>
+
+    <div id="results"></div>
+
+    <h3>Actions:</h3>
+    <button onclick="setCustomerId()">Set Customer ID 14</button>
+    <button onclick="checkUnreadCount()">Check Unread Count</button>
+    <button onclick="createTestNotification()">Create Test Notification</button>
+    <button onclick="testSSEConnection()">Test SSE Connection</button>
+    <button onclick="clearStorage()">Clear Storage</button>
+
+    <script>
+        function log(message, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = type;
+            div.innerHTML = `<strong>${new Date().toLocaleTimeString()}:</strong> ${message}`;
+            results.appendChild(div);
+            console.log(message);
+        }
+
+        function setCustomerId() {
+            sessionStorage.setItem('customerId', '14');
+            log('✅ Set customer ID 14 in sessionStorage', 'success');
+            log(`Customer ID: ${sessionStorage.getItem('customerId')}`);
+        }
+
+        async function checkUnreadCount() {
+            try {
+                const response = await fetch('http://localhost:8000/api/notifications/14/unread-count');
+                const data = await response.json();
+                log(`Unread count API response: ${JSON.stringify(data)}`, 'success');
+            } catch (error) {
+                log(`Error checking unread count: ${error.message}`, 'error');
+            }
+        }
+
+        async function createTestNotification() {
+            try {
+                const response = await fetch('http://localhost:8000/api/notifications/create', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        customer_id: 14,
+                        description: `Test notification from HTML - ${new Date().toLocaleString()}`
+                    })
+                });
+                const data = await response.json();
+                log(`Created notification: ${JSON.stringify(data)}`, 'success');
+            } catch (error) {
+                log(`Error creating notification: ${error.message}`, 'error');
+            }
+        }
+
+        function testSSEConnection() {
+            const customerId = sessionStorage.getItem('customerId') || '14';
+            log(`Attempting SSE connection for customer: ${customerId}`);
+            
+            const eventSource = new EventSource(`http://localhost:8000/api/notifications/stream/${customerId}`);
+            
+            eventSource.onopen = () => {
+                log('✅ SSE Connection opened successfully', 'success');
+            };
+            
+            eventSource.onmessage = (event) => {
+                log(`📨 SSE Message received: ${event.data}`, 'success');
+            };
+            
+            eventSource.onerror = (error) => {
+                log(`❌ SSE Error: ${error}`, 'error');
+                eventSource.close();
+            };
+
+            // Close connection after 10 seconds
+            setTimeout(() => {
+                eventSource.close();
+                log('SSE Connection closed after 10 seconds');
+            }, 10000);
+        }
+
+        function clearStorage() {
+            sessionStorage.clear();
+            localStorage.clear();
+            log('🧹 Cleared all storage', 'success');
+        }
+
+        // Auto-set customer ID on page load
+        window.onload = () => {
+            log('Test page loaded');
+            if (!sessionStorage.getItem('customerId')) {
+                setCustomerId();
+            } else {
+                log(`Customer ID already set: ${sessionStorage.getItem('customerId')}`);
+            }
+        };
+    </script>
+</body>
+</html>

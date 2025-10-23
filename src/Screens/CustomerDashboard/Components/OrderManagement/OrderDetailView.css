@@ -1,0 +1,215 @@
+/* === Button Container Styling === */
+.button-container {
+  display: flex;
+  /* Button ko right side par align karein */
+  justify-content: flex-end; 
+  width: 100%;
+  padding: 1rem 0; /* Container ke upar neeche thora space */
+}
+
+/* === Button Styling (Image jaisa design) === */
+.button-container .btn-secondary {
+  background-color: #ffffff; /* White background */
+  color: #000000; /* Black text */
+  border: 1px solid #000000; /* Black border */
+  border-radius: 50px; /* Bilkul rounded corners */
+  padding: 0.5rem 2rem; /* Button ke andar space */
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect (Optional) */
+.button-container .btn-secondary:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* ======================================= */
+/* === MOBILE STYLES (768px ya kam) === */
+/* ======================================= */
+
+@media (max-width: 768px) {
+
+  .button-container .btn-secondary {
+    /* Button ki width barha dein */
+    width: 100%; /* Screen ki 80% chaurai le le ga */
+    max-width: 300px; /* Lekin 300px se zyada na barhe */
+  }
+  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  padding-right: 5px !important;
+  padding-left: 5px !important;
+}
+
+}
+
+/* === Card & Container Styling === */
+.order-detail-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+.track-order {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px #A8A8A840;
+  width: 100%;
+}
+
+.custom-close-button
+{
+  display: flex;
+  justify-content: end;
+}
+/* ======================================= */
+/* === DESKTOP: HORIZONTAL LAYOUT ====== */
+/* ======================================= */
+.progress-steps-container {
+  display: flex;
+  position: relative;
+}
+
+.progress-step {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Desktop par text center mein rahega */
+  width: 25%;
+}
+
+.step-line {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  height: 2px;
+  width: calc(100% - 30px);
+  background-color: #e9ecef;
+  z-index: 1;
+  transform: translateX(15px);
+}
+
+.progress-step:last-child .step-line {
+  display: none;
+}
+
+.progress-step.completed .step-line {
+  background-color: #17a2b8;
+}
+.track-order .tracking-id {
+  color: #17a2b8 !important;
+}
+.step-circle {
+  width: 25px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #C4C4C4;
+  border: 2px solid #C4C4C4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+.progress-step.active .step-circle,
+.progress-step.completed .step-circle {
+  background-color: #fff; /* White background */
+  border-color: #17a2b8; /* Teal border, for example */
+}
+
+.check-icon {
+  color: #17a2b8;
+  font-size: 1.5rem;
+}
+
+/* .step-content p {
+  margin: 0;
+} */
+.step-name {
+  font-weight: 600;
+  font-size: 22px;
+}
+.step-description {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.progress-step.completed .step-circle,
+.progress-step.active .step-circle {
+  border-color: #00969E;
+}
+
+.progress-step.active .step-circle {
+  transform: scale(1.1);
+}
+
+.progress-step.completed .step-name,
+.progress-step.active .step-name {
+  font-weight: 500;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  /* Is screen size par bhi layout HORIZONTAL hi rahega */
+  .progress-steps-container {
+    flex-direction: row;
+  }
+  .progress-step {
+    text-align: center;
+  }
+ 
+}
+
+/* ======================================= */
+/* === MOBILE STYLES (552px ya kam) === */
+/* ======================================= */
+@media (max-width: 552px) {
+  /* Sirf is screen size par layout VERTICAL hoga */
+  .progress-steps-container {
+    flex-direction: column;
+  }
+  .progress-step {
+    flex-direction: row; /* Taake circle aur text aamne-saamne aayein */
+    text-align: left; /* Text ko left align karein */
+    margin-bottom: 1.5rem; /* Steps ke beech space */
+    margin-left: 12px;
+
+  }
+    .progress-step:last-child {
+    margin-bottom: 0;
+  }
+
+  .step-circle {
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .step-content {
+    margin-top: 0;
+    /* padding-top: 5px; */
+  }
+    /* Horizontal line ko mobile par chupayein */
+  .step-line {
+    display: none;
+  }
+    /* Vertical line (Grey Background) */
+  .progress-steps-container::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    left: 22px;
+    width: 2px;
+    background-color: #e9ecef;
+    z-index: 1;
+  }
+}
+@media (min-width: 537px) and (max-width: 775px) {
+  .order-mamagment {
+    margin: 50px !important;
+
+  }
+}

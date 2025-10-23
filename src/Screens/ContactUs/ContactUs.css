@@ -1,0 +1,10 @@
+.inputborders{
+    border: 0.1px solid lightgray;
+    border-radius: 4px;
+     
+}
+
+.submitbtn{
+    background-color: #008F9D;
+    border: 1px solid  #008F9D;
+}

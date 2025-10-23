@@ -1,0 +1,107 @@
+.autocomplete-container {
+    position: relative;
+}
+
+/* Naye Button ke liye styles */
+.current-location-btn {
+    position: absolute;
+    top: 10px;      /* Adjust as needed */
+    right: 10px;    /* Adjust as needed */
+    z-index: 5;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #00909D; /* Match your theme color */
+    padding: 5px;
+}
+
+.current-location-btn:disabled {
+    cursor: not-allowed;
+    color: #6c757d;
+}
+
+.current-location-btn .spinner-border {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Baaqi styles waise hi rahenge */
+.suggestions-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-top: none;
+    border-radius: 0 0 0.25rem 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.suggestions-list li {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestions-list li:last-child {
+    border-bottom: none;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.autocomplete-loading {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Add these new styles for the modal's search bar */
+.autocomplete-container-modal {
+    position: relative;
+    z-index: 1056; /* Ensure it's above the modal body but below the modal header */
+}
+
+/* Re-use existing suggestion list styles if they are suitable */
+/* If not, you can define specific styles for the modal */
+.autocomplete-container-modal .suggestions-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 0.25rem 0.25rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.autocomplete-container-modal .suggestions-list li {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.autocomplete-container-modal .suggestions-list li:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-container-modal .suggestions-list li:hover {
+    background-color: #f5f5f5;
+}

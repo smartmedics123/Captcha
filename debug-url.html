@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Production URLs</title>
+</head>
+<body>
+    <h2>Debug Production URLs</h2>
+    <div id="debug-info"></div>
+    
+    <script>
+        // Debug production environment variables
+        const debugInfo = document.getElementById('debug-info');
+        
+        // Mock VITE_API_BASE_URL for testing
+        const VITE_API_BASE_URL = 'https://api.smartmedics.pk:8000/api';
+        const imagePath = '/uploads/prescriptions/images-1758702158802-462525485.png';
+        
+        // Test current logic
+        const baseUrl = VITE_API_BASE_URL.replace('/api', '');
+        const finalUrl = `${baseUrl}${imagePath.startsWith('/') ? '' : '/'}${imagePath}`;
+        
+        debugInfo.innerHTML = `
+            <p><strong>VITE_API_BASE_URL:</strong> ${VITE_API_BASE_URL}</p>
+            <p><strong>Base URL (after replace):</strong> ${baseUrl}</p>
+            <p><strong>Image Path:</strong> ${imagePath}</p>
+            <p><strong>Final URL:</strong> ${finalUrl}</p>
+            <br>
+            <p><strong>Expected:</strong> https://api.smartmedics.pk:8000/uploads/prescriptions/images-1758702158802-462525485.png</p>
+            <p><strong>Your Issue:</strong> https://.smartmedics.pk:8000/api/uploads/prescriptions/images-1758702158802-462525485.png</p>
+        `;
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+.smartMedicsBanner2Container {
+  padding: 50px 0;
+  width: 100%;
+}
+
+.smartMedicsBanner2Row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.smartMedicsBanner2Text {
+  flex: 1 1 300px;
+  min-width: 300px;
+  padding: 20px;
+  text-align: left;
+}
+
+.smartMedicsBanner2Logo {
+  height: 100px;
+}
+@media (max-width: 392px) {
+  .smartMedicsBanner2Logo {
+    height: 85px;
+  }
+}
+
+.smartMedicsBanner2Heading {
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #00A8A3;
+}
+
+.smartMedicsBanner2Paragraph {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+.smartMedicsBanner2Paragraph span {
+  color: #00A8A3;
+  font-weight: 500;
+}
+
+.smartMedicsBanner2Image {
+  flex: 1 1 300px;
+  min-width: 300px;
+  text-align: right;
+  padding: 20px;
+}
+
+.smartMedicsBanner2Img {
+  max-height: 350px;
+  width: auto;
+  max-width: 100%;
+}

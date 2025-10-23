@@ -1,0 +1,125 @@
+.form-check-input:checked {
+    background-color: #00c6c6;
+    border-color: #00c6c6;
+}
+  
+.form-check-input {
+    background-color: #e6e6e6;
+}
+
+.notification-container,
+.notification-heading {
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.notification-toggles {
+    padding: 20px;
+}
+
+/* === Dynamic Icon Styling === */
+.notification-icon-container {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem; /* Icon ka size */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.list-group-item .fw-bold {
+  font-size: 0.95rem;
+}
+  
+.list-group-item .text-muted {
+  font-size: 0.85rem;
+}
+
+/* === Main Pagination Container === */
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 0.5rem; 
+  padding: 1rem;
+  border-top: 1px solid #eee;
+}
+
+/* === Arrow Buttons (Previous/Next) === */
+.pagination-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+.pagination-arrow:hover:not(:disabled) {
+  background-color: #f8f9fa;
+}
+.pagination-arrow:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* === Page Numbers in the Middle === */
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-number {
+  background-color: transparent;
+  border: none;
+  color: #5a5b5c;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 0.5rem 0.9rem;
+  text-decoration: none;
+  min-width: 40px;
+}
+.pagination-number:hover {
+  background-color: #e9ecef;
+}
+.pagination-number.active {
+  background-color: #00c6c6;
+  color: #fff;
+}
+
+.pagination-ellipsis {
+  padding: 0.5rem 0.5rem;
+  color: #6c757d;
+}
+
+
+@media (max-width: 576px) {
+  .pagination-container {
+    justify-content: center; 
+  }
+
+  .pagination-arrow {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .pagination-number {
+    padding: 0.5rem 0.7rem;
+    min-width: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .notification-heading {
+    margin-top: 20px !important;
+    margin-left: 1rem !important;
+  }
+
+}

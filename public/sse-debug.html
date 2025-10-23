@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSE Debug Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .log { margin: 5px 0; padding: 5px; background: #f0f0f0; border-radius: 3px; }
+        .error { background: #ffebee; color: #c62828; }
+        .success { background: #e8f5e8; color: #2e7d32; }
+        .info { background: #e3f2fd; color: #1565c0; }
+    </style>
+</head>
+<body>
+    <h1>SSE Debug Test</h1>
+    <button onclick="testSSE()">Test SSE Connection</button>
+    <button onclick="sendTestNotification()">Send Test Notification</button>
+    <button onclick="clearLogs()">Clear Logs</button>
+    
+    <div id="logs"></div>
+
+    <script>
+        let eventSource = null;
+        
+        function log(message, type = 'info') {
+            const logs = document.getElementById('logs');
+            const div = document.createElement('div');
+            div.className = `log ${type}`;
+            div.innerHTML = `<strong>${new Date().toLocaleTimeString()}:</strong> ${message}`;
+            logs.appendChild(div);
+            console.log(message);
+            logs.scrollTop = logs.scrollHeight;
+        }
+
+        function clearLogs() {
+            document.getElementById('logs').innerHTML = '';
+        }
+
+        function testSSE() {
+            const customerId = 9;
+            const url = `http://localhost:8000/api/notifications/stream/${customerId}`;
+            
+            log(`🔌 Attempting SSE connection to: ${url}`, 'info');
+            
+            // Close existing connection
+            if (eventSource) {
+                eventSource.close();
+                log('🔚 Closed existing connection', 'info');
+            }
+            
+            try {
+                eventSource = new EventSource(url);
+                
+                eventSource.onopen = function(event) {
+                    log('✅ SSE Connection opened successfully!', 'success');
+                };
+                
+                eventSource.onmessage = function(event) {
+                    log(`📥 SSE Message received: ${event.data}`, 'success');
+                    
+                    try {
+                        const data = JSON.parse(event.data);
+                        if (data.type === 'notification') {
+                            log(`🔔 NEW NOTIFICATION: ${JSON.stringify(data.data)}`, 'success');
+                        }
+                    } catch (e) {
+                        log(`❌ Error parsing message: ${e.message}`, 'error');
+                    }
+                };
+                
+                eventSource.onerror = function(event) {
+                    log(`❌ SSE Error occurred: ${JSON.stringify(event)}`, 'error');
+                    log(`❌ EventSource readyState: ${eventSource.readyState}`, 'error');
+                    
+                    if (eventSource.readyState === EventSource.CLOSED) {
+                        log('❌ SSE Connection closed', 'error');
+                    }
+                };
+                
+            } catch (error) {
+                log(`❌ Error creating SSE connection: ${error.message}`, 'error');
+            }
+        }
+        
+        async function sendTestNotification() {
+            try {
+                const response = await fetch('http://localhost:8000/api/notifications/trigger/9', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        title: 'HTML Test',
+                        message: `Test from HTML page - ${new Date().toLocaleString()}`
+                    })
+                });
+                
+                const data = await response.json();
+                log(`📤 Test notification sent: ${JSON.stringify(data)}`, 'info');
+            } catch (error) {
+                log(`❌ Error sending notification: ${error.message}`, 'error');
+            }
+        }
+        
+        // Auto-start SSE connection
+        window.onload = function() {
+            log('🚀 Page loaded, testing SSE...', 'info');
+            testSSE();
+        };
+    </script>
+</body>
+</html>

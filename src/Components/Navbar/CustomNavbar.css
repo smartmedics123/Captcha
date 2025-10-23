@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  overflow-x: hidden;
+}
+.icon-button {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hover-bg {
+    color: black;
+  }
+.hover-bg:hover{
+    color: #008F9D;
+    border-radius: 30px;
+    font-weight: 600;
+  }
+/* @media (max-width: 1440px) {
+    .orderbtn{
+     font-size: 10px !important;
+     
+     width: 110px !important;
+     height: 50px !important;
+    }
+    .icon-button{
+        font-size: 15px !important;
+        width: 90px !important;
+    }
+
+} */
+.ordernow {
+  background: linear-gradient(135deg, #008F9D, #00B5A3, #0ED0BA); /* Gradient color from the image */
+  border-radius: 25px; /* Rounded corners for a pill-shaped button */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Spacing inside the button */
+  border: none; /* No border */
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold; /* Make the text bold */
+  text-transform: uppercase; /* Capitalize text to match the "ORDER NOW" look */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.searchbar{
+  width: 43%;
+}
+@media (max-width: 1440px) {
+  .searchbar{
+    width: 23%;
+  }
+  .ordernow{
+    width: 100%;
+      font-size: 11px;
+
+  }
+}
+@media (max-width: 1024px) {
+  
+  .ordernow{
+    margin-left: 20px;
+    width: 115%;
+    height: 40%;
+  }
+  
+}

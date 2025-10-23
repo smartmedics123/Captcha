@@ -1,0 +1,32 @@
+.text-primary {
+    color: #00A9B0 !important; /* Custom color for text */
+  }
+  
+  .custom-outline-button {
+    border: 2px solid #00A9B0;
+    color: #00A9B0;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 25px !important;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .custom-outline-button:hover {
+    background-color: #00A9B0 !important;
+    border-color: #00A9B0 !important;
+    color: white;
+  }
+  
+  .custom-filled-button {
+    background-color: #00A9B0 !important;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+
+ 
