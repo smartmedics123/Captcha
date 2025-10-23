@@ -22,28 +22,40 @@ function TrackOrder() {
       completed: false,
       // botwithbox.json caused JSON parse issues during the Vite/Vercel build.
       // Use the smaller `1st.json` here to avoid including the large JSON at build-time.
-      animationPath: () => import("../assets/lottie/1st.json"),
+      animationPath: async () => {
+        const response = await fetch("/lottie/1st.json");
+        return await response.json();
+      },
     },
     {
       id: "in progress",
       label: "In Progress",
       labelDetails: "We are working on your order",
       completed: false,
-      animationPath: () => import("../assets/lottie/1st.json"), // ✅ Optimize target
+      animationPath:  async () => {
+        const response = await fetch("/lottie/1st.json");
+        return await response.json();
+      }
     },
     {
       id: "shipped",
       label: "Shipped",
       labelDetails: "Your order on way",
       completed: false,
-      animationPath: () => import("../assets/lottie/box.json"),
+      animationPath: async () => {  
+        const response = await fetch("/lottie/box.json");
+        return await response.json();
+      },
     },
     {
       id: "delivered",
       label: "Delivered",
       labelDetails: "Enjoy your order",
       completed: false,
-      animationPath: () => import("../assets/lottie/enjoyYourorder.json"),
+      animationPath: async () => {
+        const response = await fetch("/lottie/enjoyYourorder.json");
+        return await response.json();
+      },
     },
   ]);
 
