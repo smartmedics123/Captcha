@@ -26,11 +26,12 @@ import {
 
 // Import both components
 import OrderDetailView from "./OrderDetailView";
-import PreSortedOrderDetailView from "./PreSortedOrderDetailView";
+// import PreSortedOrderDetailView from "./PreSortedOrderDetailView";
 
 import "./OrderManagement.css";
 import "./PreSortedOrderDetailView.css";
 import { getCustomerId } from "../../../../utils/CustomerId";
+import PreSortedOrderDetailView from "./PreSortedOrderDetailView.jsx";
 
 // Add this utility function to parse your date format
 const parseCustomDate = (dateString) => {
