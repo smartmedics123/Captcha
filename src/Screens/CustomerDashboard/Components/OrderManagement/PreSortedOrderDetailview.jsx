@@ -22,7 +22,7 @@ const downloadImage = (url, filename) => {
         .catch(e => console.error("Could not download the image.", e));
 };
 
-const PreSortedOrderDetailView = ({ order, isLoading, onClose, breadcrumbLabel }) => {
+const PreSortedOrderDetailview = ({ order, isLoading, onClose, breadcrumbLabel }) => {
     console.log('🔥 PreSortedOrderDetailView loaded with order:', order);
     
     if (isLoading) {
@@ -436,4 +436,4 @@ const PreSortedOrderDetailView = ({ order, isLoading, onClose, breadcrumbLabel }
     );
 };
 
-export default PreSortedOrderDetailView;
+export default PreSortedOrderDetailview;
