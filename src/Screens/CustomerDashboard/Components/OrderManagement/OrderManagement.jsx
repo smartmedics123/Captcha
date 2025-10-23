@@ -31,7 +31,7 @@ import OrderDetailView from "./OrderDetailView";
 import "./OrderManagement.css";
 import "./PreSortedOrderDetailView.css";
 import { getCustomerId } from "../../../../utils/CustomerId";
-import PreSortedOrderDetailview from "./PreSortedOrderDetailView.jsx";
+import PreSortedOrderDetailview from "./PreSortedOrderDetailview";
 
 
 // Add this utility function to parse your date format
