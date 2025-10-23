@@ -20,7 +20,9 @@ function TrackOrder() {
       label: "Pending",
       labelDetails: "Prescription Under Review",
       completed: false,
-      animationPath: () => import("../assets/lottie/botwithbox.json"),
+      // botwithbox.json caused JSON parse issues during the Vite/Vercel build.
+      // Use the smaller `1st.json` here to avoid including the large JSON at build-time.
+      animationPath: () => import("../assets/lottie/1st.json"),
     },
     {
       id: "in progress",
