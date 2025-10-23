@@ -31,7 +31,7 @@ import OrderDetailView from "./OrderDetailView";
 import "./OrderManagement.css";
 import "./PreSortedOrderDetailView.css";
 import { getCustomerId } from "../../../../utils/CustomerId";
-import PreSortedOrderDetailview from "./PreSortedOrderDetailview";
+import PreSortedOrderDetailView from "./PreSortedOrderDetailView";
 
 
 // Add this utility function to parse your date format
@@ -560,7 +560,7 @@ const OrderManagement = () => {
           {showDetailView ? (
             // Use PreSortedOrderDetailView for both presorted and nonsorted orders
             // since it handles both cases correctly with the new unified API
-            <PreSortedOrderDetailview
+            <PreSortedOrderDetailView
               order={selectedOrder}
               isLoading={isLoadingOrder}
               onClose={handleCloseDetailView}
