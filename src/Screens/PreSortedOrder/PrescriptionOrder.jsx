@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button, Container, Form, Alert } from "react-bootstrap";
-import CustomNavbar from "../../Components/Navbar/CustomNavbar";
+// import CustomNavbar from "../../Components/Navbar/CustomNavbar";
 import Footer from "../../Components/Footer";
 import "./PrescriptionOrder.css";
 import { submitOrderForm } from "../../services/PreSortedOrder";

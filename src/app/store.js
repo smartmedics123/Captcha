@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { persistStore, persistReducer } from "redux-persist";
+import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import sessionStorage from "redux-persist/lib/storage/session"; // Use sessionStorage
 import cartReducer from "../features/cart/cartSlice";
 import emailReducer from "../features/email/emailSlice"; // Email slice
@@ -42,6 +42,13 @@ const store = configureStore({
     wishlist: wishlistReducer,
     prescription: prescriptionReducer
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        // Ignore redux-persist actions which include non-serializable values (functions)
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 const persistor = persistStore(store); // Create persistor for Redux Persist
